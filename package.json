@@ -20,6 +20,10 @@
     "js",
     "compile"
   ],
+  "devDependencies": {
+    "mocha": "1.17.0",
+    "should": "2.1.1"
+  },
   "author": "Brock Whitten <brock@sintaxi.com>",
   "license": "MIT",
   "bugs": {
