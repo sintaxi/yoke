@@ -1,0 +1,28 @@
+{
+  "name": "yoke",
+  "version": "0.1.0",
+  "description": "preprocessor that does language agnostic concatenation",
+  "main": "yoke.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sintaxi/yoke.git"
+  },
+  "keywords": [
+    "concat",
+    "preprocessor",
+    "yoke",
+    "cat",
+    "glob",
+    "css",
+    "js",
+    "compile"
+  ],
+  "author": "Brock Whitten <brock@sintaxi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sintaxi/yoke/issues"
+  }
+}
