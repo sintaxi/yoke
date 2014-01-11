@@ -2,7 +2,11 @@ var fs    = require("fs")
 var path  = require("path")
 
 module.exports = function(sourcePath, callback){
+
+  // convert to absolute path
   var sourceAbsolutePath = path.resolve(sourcePath)
+
+  // read source file
   fs.readFile(sourceAbsolutePath, function(err, content){
     if(err) return callback(err)
 
@@ -11,17 +15,16 @@ module.exports = function(sourcePath, callback){
     var count     = 0
     var contents  = []
     var sourceDir = path.dirname(sourceAbsolutePath)
-    var body      = []
+    var body      = new Array(total - 1)
 
-    files.forEach(function(item){
-      var childPath = path.join(sourceDir, item)
+    for (var i = 0; i < total; i++)(function(i){
+      var childPath = path.join(sourceDir, files[i])
       fs.readFile(childPath, function(err, cont){
         count ++
-        // TODO: order this
-        body.push(cont.toString())
+        body.splice(i, 1, cont.toString())
         if(count === total) callback(null, body.join("\n"))
       })
-    })
+    })(i)
 
   })
 }

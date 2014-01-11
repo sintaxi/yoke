@@ -18,5 +18,8 @@ Yoke fetches the content of all those files (in parallel) and merges them togeth
 
 ### CLI
 
-The `yoke` command outputs a stream with the concatenated output. Simply pipe the output to a destination file `yoke bundle.js.yoke > bundle.js`
+The `yoke` command outputs a stream with the concatenated output.
 
+    `yoke bundle.js.yoke`
+
+To save, simply pipe the output to a destination file `yoke bundle.js.yoke > bundle.js`
