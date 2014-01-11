@@ -5,12 +5,13 @@ module.exports = function(sourcePath, callback){
 
   // convert to absolute path
   var sourceAbsolutePath = path.resolve(sourcePath)
+  var lf = (process.platform === "win32") ? "\r\n" : "\n";
 
   // read source file
   fs.readFile(sourceAbsolutePath, function(err, content){
     if(err) return callback(err)
 
-    var files     = content.toString().split("\n")
+    var files     = content.toString().split(lf)
     var total     = files.length
     var count     = 0
     var contents  = []
@@ -22,7 +23,7 @@ module.exports = function(sourcePath, callback){
       fs.readFile(childPath, function(err, cont){
         count ++
         body.splice(i, 1, cont.toString())
-        if(count === total) callback(null, body.join("\n"))
+        if(count === total) callback(null, body.join(lf))
       })
     })(i)
 
