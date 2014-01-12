@@ -1,5 +1,6 @@
 var fs    = require("fs")
 var path  = require("path")
+var os    = require("os")
 
 module.exports = function(sourcePath, callback){
 
@@ -10,7 +11,7 @@ module.exports = function(sourcePath, callback){
   fs.readFile(sourceAbsolutePath, function(err, content){
     if(err) return callback(err)
 
-    var files     = content.toString().split("\n")
+    var files     = content.toString().split(os.EOL)
     var total     = files.length
     var count     = 0
     var contents  = []
@@ -22,7 +23,7 @@ module.exports = function(sourcePath, callback){
       fs.readFile(childPath, function(err, cont){
         count ++
         body.splice(i, 1, cont.toString())
-        if(count === total) callback(null, body.join("\n"))
+        if(count === total) callback(null, body.join(os.EOL))
       })
     })(i)
 
