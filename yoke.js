@@ -21,9 +21,17 @@ module.exports = function(sourcePath, callback){
     for (var i = 0; i < total; i++)(function(i){
       var childPath = path.join(sourceDir, files[i])
       fs.readFile(childPath, function(err, cont){
-        count ++
-        body.splice(i, 1, cont.toString())
-        if(count === total) callback(null, body.join(os.EOL))
+
+        if (err) {
+          return callback(err);
+        } else {
+          count ++;
+          body.splice(i, 1, cont.toString())  
+        }
+        
+        if(count === total) {
+          callback(null, body.join(os.EOL))
+        }
       })
     })(i)
 
