@@ -1,7 +1,12 @@
 {
   "name": "yoke",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "preprocessor that does language agnostic concatenation",
+  "author": "Brock Whitten <brock@sintaxi.com>",
+  "contributors": [
+    "Brock Whitten <brock@sintaxi.com>",
+    "Rob Ellis <rob@silentrob.me>"
+  ],
   "main": "yoke.js",
   "scripts": {
     "test": "mocha test"
@@ -24,9 +29,9 @@
     "mocha": "1.17.0",
     "should": "2.1.1"
   },
-  "author": "Brock Whitten <brock@sintaxi.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sintaxi/yoke/issues"
-  }
+  },
+
 }
