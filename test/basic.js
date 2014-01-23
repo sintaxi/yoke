@@ -9,7 +9,7 @@ describe("yoke", function(){
   })
 
   it("should be cool", function(done){
-    yoke("test/fixtures/bundle.js.yoke", function(err, output){
+    yoke("test/fixtures/bundle.txt.yoke", function(err, output){
       should.not.exist(err)
       should.exist(output)
       output.should.eql("one\ntwo")

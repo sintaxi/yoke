@@ -1,0 +1,3 @@
+application/javascript				coffee
+text/css											less sass styl
+text/html											jade ejs
